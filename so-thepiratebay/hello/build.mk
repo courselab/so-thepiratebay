@@ -1,16 +1,3 @@
-#    SPDX-FileCopyrightText: 2021 Monaco F. J. <monaco@usp.br>
-#    SPDX-FileCopyrightText: 2025 Rodrigo Valeretto <rodrigoaugustovaleretto@gmail.com>
-#   
-#    SPDX-License-Identifier: GPL-3.0-or-later
-#
-#  This file is a derivative of SYSeg (https://gitlab.com/monaco/syseg)
-#  and includes modifications made by the following author(s):
-#  Rodrigo Valeretto <rodrigoaugustovaleretto@gmail.com>
-
-CC=gcc
-MAKE=make
-
-this: hello.bin
 
 this: hello.bin
 
@@ -38,5 +25,3 @@ clean:
 	make clean-extra
 
 
-# SYSeg's  convenience rules (not related to the example itself)
-include bintools.mk
