@@ -1,0 +1,11 @@
+Uma função em Assembly foi implementada no arquivo libc.S, utilizando a interrupção 0x12 da BIOS para obter o tamanho da memória convencional em KB, retornando esse valor para o C.
+
+A assinatura dessa função foi declarada no arquivo stdio.h como "get_conv_mem_size", permitindo sua utilização no código em C.
+
+Como a função printf fornecida não é a versão completa da linguagem C, e apenas imprime textos sem suporte a formatação de inteiros, foi necessário implementar uma função auxiliar em C, chamada "uitoa", que converte o valor inteiro retornado pela função de Assembly para seu equivalente em ASCII.
+
+Na função main, o valor da memória é recuperado, convertido em string e impresso utilizando a função printf disponibilizada no exercício.
+
+Durante o processo de compilação, foi necessário adicionar a flag "-fno-stack-protector" na compilação dos arquivos C. Isso se deve ao fato de que, por padrão, o compilador inclui proteção contra estouro de pilha, inserindo chamadas à função "__stack_chk_fail", que não está definida na nossa biblioteca. Essa alteração foi realizada diretamente no Makefile para garantir a correta geração do binário.
+
+O exercício foi implementado e testado com sucesso.
