@@ -1,7 +1,7 @@
 /*
  *    SPDX-FileCopyrightText: 2021 Monaco F. J. <monaco@usp.br>
  *    SPDX-FileCopyrightText: 2025 keny-azvd <kenner-azevedo@hotmail.com>
- *   
+ *
  *    SPDX-License-Identifier: GPL-3.0-or-later
  *
  *  This file is a derivative of SYSeg (https://gitlab.com/monaco/syseg)
@@ -9,16 +9,16 @@
  *  keny-azvd <kenner-azevedo@hotmail.com>
  */
 
-/* This source file implements the kernel entry function 'kmain' called
-   by the bootloader, and the command-line interpreter. Other kernel functions
-   were implemented separately in another source file for legibility. */
+ /* This source file implements the kernel entry function 'kmain' called
+    by the bootloader, and the command-line interpreter. Other kernel functions
+    were implemented separately in another source file for legibility. */
 
 #include "kernel.h" /* Essential kernel functions.  */
 #include "bios1.h"  /* For kwrite() etc.            */
 #include "bios2.h"  /* For kread() etc.             */
 #include "kaux.h"   /* Auxiliary kernel functions.  */
 
-/* Kernel's entry function. */
+    /* Kernel's entry function. */
 
 void kmain(void)
 {
@@ -42,7 +42,7 @@ void shell()
 {
   int i;
   clear();
-  kwrite("TinyDOS 1.0\n");
+  kwrite("ThePirateDOS 1.0\n");
 
   while (go_on)
   {
@@ -83,11 +83,11 @@ void shell()
    Function prototypes are in kernel.h. */
 
 struct cmd_t cmds[] =
-    {
-        {"help", f_help}, /* Print a help message.       */
-        {"quit", f_quit}, /* Exit TyDOS.                 */
-        {"hello", f_hello}, /* Execute an example program. */
-        {0, 0}};
+{
+    {"help", f_help}, /* Print a help message.       */
+    {"quit", f_quit}, /* Exit TyDOS.                 */
+    {"hello", f_hello}, /* Execute an example program. */
+    {0, 0} };
 
 /* Build-in shell command: help. */
 
