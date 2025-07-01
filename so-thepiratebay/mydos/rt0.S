@@ -12,9 +12,6 @@
 	.global boot_drive	/* The drive where stage1 was loaded from.*/
 	.text
 
-	jmp _start		/* Provision for BIOSes that assume the   */
-	. = . + 60		/* media is FAT and has a BBP in the MBR. */
-
 _start:
 
 	cli			/* Disable interruptions.                 */
