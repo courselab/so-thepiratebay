@@ -79,6 +79,9 @@ disk.img: tyfsedit $(dos).bin
 		dd if=/dev/zero of=disk.img count=2880
 		./format -r $(reserved_blocks) disk.img
 		dd if=$(dos).bin of=disk.img conv=notrunc obs=1 seek=16
+		./put file1.txt disk.img
+		./put file2.txt disk.img
+		./put file3.txt disk.img
 
 # Housekeeping.
 

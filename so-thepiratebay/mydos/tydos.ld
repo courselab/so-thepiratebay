@@ -60,6 +60,8 @@ SECTIONS
 
 	_END_STACK = 0x7c00;	/* Place the stack bellow the program.      */
 
+	_DIR_ADDR = 0xa400;
+
 }
 STARTUP(rt0.o)			 /* Prepend with the start file. */
 
