@@ -43,7 +43,7 @@ void shell()
 {
   int i;
   clear();
-  kwrite("TinyDOS 1.0\n");
+  kwrite("ThePirateDOS 1.0\n");
 
   while (go_on)
   {

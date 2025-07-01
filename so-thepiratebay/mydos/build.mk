@@ -11,7 +11,7 @@
 # exercise, redefine $(dos) to reflect your own DOS name, say
 # dos = "amazingOS"
 
-dos=$(shell basename $$(realpath .))
+dos="thepiratedos"
 
 # Build the OS and an example user program.
 
