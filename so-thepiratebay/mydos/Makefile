@@ -5,7 +5,7 @@
 CC=gcc
 MAKE=make
 
-dos=$(shell basename $$(realpath .))
+dos="thepiratedos"
 
 # Build the OS and an example user program.
 
