@@ -1,7 +1,7 @@
 /*
  *    SPDX-FileCopyrightText: 2024 Monaco F. J. <monaco@usp.br>
  *    SPDX-FileCopyrightText: 2025 Rodrigo Valeretto <rodrigoaugustovaleretto@gmail.com>
- *   
+ *
  *    SPDX-License-Identifier: GPL-3.0-or-later
  *
  *  This file is a derivative of SYSeg (https://gitlab.com/monaco/syseg)
@@ -9,21 +9,21 @@
  *  Rodrigo Valeretto <rodrigoaugustovaleretto@gmail.com>
  */
 
-/* Library libtydos.a should be statically linked against user programs meant
-   for running on TyDOS. It provides some custom C functions that invoke system
-   calls for trivial tasks.
+ /* Library libtpdos.a should be statically linked against user programs meant
+    for running on TpDOS. It provides some custom C functions that invoke system
+    calls for trivial tasks.
 
-   This is the header file that should be included in the user programs. */
+    This is the header file that should be included in the user programs. */
 
-#ifndef TYDOS_H
-#define TYDOS_H
+#ifndef TPDOS_H
+#define TPDOS_H
 
-/* Syscall numbers. */
+    /* Syscall numbers. */
 
 #define SYS_INVALID 0
 #define SYS_EXIT 1
 #define SYS_WRITE 2
 
-void puts(const char *str); /* Outputs 'str' on the screen. */
+void puts(const char* str); /* Outputs 'str' on the screen. */
 
-#endif /* TYDOS_H  */
+#endif /* TPDOS_H  */

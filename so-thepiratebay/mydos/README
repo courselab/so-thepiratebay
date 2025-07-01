@@ -11,7 +11,7 @@
  ==============================
 
  This programming exercise consists of extending the example tyDOS, provided
- under the directory 'eg/tydos'. The source code illustrates a DOS-like
+ under the directory 'eg/tpdos'. The source code illustrates a DOS-like
  program that runs in x86 real-mode. TyDOS already implements a trivial
  command-line interpreter that can execute built-in functions: if the user
  enters one of the existing command names, tyDOS runs a corresponding routine;
@@ -129,7 +129,7 @@
 
     In tyDOS example, 'prog.o' was directly linked into the kernel and
     we could execute it simply by calling it's 'main' function. That was
-    possible because, when 'tydos.bin' was built, the linker could resolve
+    possible because, when 'tpdos.bin' was built, the linker could resolve
     the symbol 'main'.
 
     Now, 'main' is in the user program, and the link-editor does not know
@@ -175,7 +175,7 @@
    capability and you can reuse it to implement the syscall. See 'bios2.S'
    and 'syscall.c' to see how this is done for 'sys_write'.
 
-   Then, increment the user library 'libtydos.a' by implementing the
+   Then, increment the user library 'libtpdos.a' by implementing the
    user function
 
    	void gets(char *buffer)

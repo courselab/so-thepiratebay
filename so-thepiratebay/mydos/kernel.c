@@ -86,7 +86,7 @@ void shell()
 struct cmd_t cmds[] =
 {
     {"help", f_help}, /* Print a help message.       */
-    {"quit", f_quit}, /* Exit TyDOS.                 */
+    {"quit", f_quit}, /* Exit TpDOS.                 */
     {"hello", f_hello}, /* Execute an example program. */
     {"list", f_list}, /* Execute an example program. */
     {0, 0} };
@@ -99,7 +99,7 @@ void f_help()
   kwrite("   But we can try also some commands:\n");
   kwrite("      hello   (to run a sample user program)\n");
   kwrite("      list   (List the files in the disk)\n");
-  kwrite("      quit    (to exit TyDOS)\n");
+  kwrite("      quit    (to exit TpDOS)\n");
 }
 
 void f_quit()
@@ -113,12 +113,12 @@ void f_quit()
    Execute an example user program which invokes a syscall.
 
    The example program (built from the source 'prog.c') is statically linked
-   to the kernel by the linker script (tydos.ld). In order to extend the
+   to the kernel by the linker script (tpdos.ld). In order to extend the
    example, and load and external C program, edit 'f_exec' and 'prog.c' choosing
    a different name for the entry function, such that it does not conflict with
    the 'main' function of the external program.  Even better: remove 'f_exec'
-   entirely, and suppress the 'example_program' section from the tydos.ld, and
-   edit the Makefile not to include 'prog.o' and 'libtydos.o' from 'tydos.bin'.
+   entirely, and suppress the 'example_program' section from the tpdos.ld, and
+   edit the Makefile not to include 'prog.o' and 'libtpdos.o' from 'tpdos.bin'.
 
   */
 
