@@ -39,6 +39,7 @@ SECTIONS
 	  kaux.o       (.text .data .bss .rodata) /* Aux. kernel functions. */
 	  bios2.o      (.text .data .bss .rodata) /* More low-level code .  */
 	  syscall.o    (.text .data .bss .rodata) /* System calls.          */
+	  tyfs.o	   (.text .data .bss .rodata)
 	  logo.o       (.rodata)		  /* Some ASCII "art".      */
 	}
 

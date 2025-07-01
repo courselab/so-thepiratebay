@@ -1,7 +1,7 @@
 /*
  *    SPDX-FileCopyrightText: 2021 Monaco F. J. <monaco@usp.br>
  *    SPDX-FileCopyrightText: 2025 Rodrigo Valeretto <rodrigoaugustovaleretto@gmail.com>
- *   
+ *
  *    SPDX-License-Identifier: GPL-3.0-or-later
  *
  *  This file is a derivative of SYSeg (https://gitlab.com/monaco/syseg)
@@ -9,16 +9,17 @@
  *  Rodrigo Valeretto <rodrigoaugustovaleretto@gmail.com>
  */
 
-/* This source file implements the kernel entry function 'kmain' called
-   by the bootloader, and the command-line interpreter. Other kernel functions
-   were implemented separately in another source file for legibility. */
+ /* This source file implements the kernel entry function 'kmain' called
+    by the bootloader, and the command-line interpreter. Other kernel functions
+    were implemented separately in another source file for legibility. */
 
 #include "kernel.h" /* Essential kernel functions.  */
 #include "bios1.h"  /* For kwrite() etc.            */
 #include "bios2.h"  /* For kread() etc.             */
 #include "kaux.h"   /* Auxiliary kernel functions.  */
+#include "tyfs.h"
 
-/* Kernel's entry function. */
+    /* Kernel's entry function. */
 
 void kmain(void)
 {
@@ -83,11 +84,12 @@ void shell()
    Function prototypes are in kernel.h. */
 
 struct cmd_t cmds[] =
-    {
-        {"help", f_help}, /* Print a help message.       */
-        {"quit", f_quit}, /* Exit TyDOS.                 */
-        {"hello", f_hello}, /* Execute an example program. */
-        {0, 0}};
+{
+    {"help", f_help}, /* Print a help message.       */
+    {"quit", f_quit}, /* Exit TyDOS.                 */
+    {"hello", f_hello}, /* Execute an example program. */
+    {"list", f_list}, /* Execute an example program. */
+    {0, 0} };
 
 /* Build-in shell command: help. */
 
@@ -95,7 +97,8 @@ void f_help()
 {
   kwrite("...me, Obi-Wan, you're my only hope!\n\n");
   kwrite("   But we can try also some commands:\n");
-  kwrite("      hello   (to run a sample user program\n");
+  kwrite("      hello   (to run a sample user program)\n");
+  kwrite("      list   (List the files in the disk)\n");
   kwrite("      quit    (to exit TyDOS)\n");
 }
 

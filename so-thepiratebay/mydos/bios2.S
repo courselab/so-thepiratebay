@@ -129,6 +129,16 @@ syscall_table:
 	.align 4
 
 
+load_dir: 
+	pusha
+	mov boot_drive, %dl
+	mov 0x2, %ah
+	mov $44, %al
+
+	int $0x13
+	popa
+
+
 msg_err_lprg:
 	.string "Error loading program\n"
 msg_err_read:
